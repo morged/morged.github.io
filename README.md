@@ -1,2 +1,2 @@
-# morged.github.io
-&lt;morged-component>
+# https://morged.github.io
+
