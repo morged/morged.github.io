@@ -33,6 +33,10 @@
                         title: "LLM - Never Gonna Give You Up",
                         allow: "autoplay; fullscreen; picture-in-picture",
                         allowfullscreen: true
+                    }),
+                    createElement("h1", {
+                        innerHTML: "<slot></slot>",
+                        style: "position:absolute;top:0;left:0;width:100%;padding:0;background:gold;color:black;font:34px Arial",
                     })
                 )
             }
@@ -40,6 +44,6 @@
     </script>
 </head>
 <body>
-    <morged-player></morged-player>
+    <morged-player>LLM - Never Gonna Give You Up</morged-player>
 </body>
 </html>
