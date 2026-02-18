@@ -20,7 +20,7 @@
     <script> 
         customElements.define("morged-player", class extends HTMLElement {
             connectedCallback() {
-                const createElement = (tag, props = {}, el = document.createElement(tag)) => Object.assign(el, props);
+                const createElement = (tag, props = {}) => Object.assign(document.createElement(tag), props);
                 this.append(
                     createElement("style", {
                         textContent:
