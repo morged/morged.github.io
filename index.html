@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick Astley - Never Gonna Give You Up</title>
+    <title>LLM - Never Gonna Give You Up</title>
     <style>
         * {
             margin: 0;
@@ -16,33 +16,30 @@
             height: 100%;
             overflow: hidden;
         }
-        
-        #video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
     </style>
+    <script>
+        customElements.define("morged-player", class extends HTMLElement {
+            connectedCallback() {
+                const createElement = (tag, props = {}, el = document.createElement(tag)) => Object.assign(el, props);
+                this.append(
+                    createElement("style", {
+                        textContent:
+                            `:host{position:fixed;top:0;left:0;width:100%;height:100%}`
+                            + `iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}`
+
+                    }),
+                    createElement("iframe", {
+                        src: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&loop=1&playlist=dQw4w9WgXcQ",
+                        title: "LLM - Never Gonna Give You Up",
+                        allow: "autoplay; fullscreen; picture-in-picture",
+                        allowfullscreen: true
+                    })
+                )
+            }
+        })
+    </script>
 </head>
 <body>
-    <div id="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=1&loop=1&playlist=dQw4w9WgXcQ" 
-            title="Rick Astley - Never Gonna Give You Up video player"
-            allow="autoplay; fullscreen; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
+    <morged-player></morged-player>
 </body>
 </html>
