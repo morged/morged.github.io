@@ -28,15 +28,15 @@
                             + `iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}`
 
                     }),
-                    createElement("iframe", {
+                    this.iframe = createElement("iframe", {
                         src: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&loop=1&playlist=dQw4w9WgXcQ",
                         title: "LLM - Never Gonna Give You Up",
                         allow: "autoplay; fullscreen; picture-in-picture",
                         allowfullscreen: true
                     }),
                     createElement("h1", {
-                        innerHTML: "<slot></slot>",
-                        style: "position:absolute;top:0;left:0;width:100%;padding:0;background:gold;color:black;font:34px Arial",
+                        innerHTML: this.iframe.title,
+                        style: "position:absolute;top:0;left:0;width:100%;height:1em;padding:0;background:gold;color:black;font:34px Arial",
                     })
                 )
             }
@@ -44,6 +44,8 @@
     </script>
 </head>
 <body>
-    <morged-player>LLM - Never Gonna Give You Up</morged-player>
+
+    <morged-player></morged-player>
+    
 </body>
 </html>
